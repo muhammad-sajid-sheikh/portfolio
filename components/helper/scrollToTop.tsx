@@ -10,12 +10,8 @@ function ScrollToTop(){
         const toggleVisiblity = ()=>{
             setIsVisible(window.scrollY > 300)
         }
-
-        // run once on mount so the button shows correctly after a reload mid-page
         toggleVisiblity()
-
         window.addEventListener("scroll", toggleVisiblity, { passive: true })
-
         return ()=>{
             window.removeEventListener("scroll", toggleVisiblity)
         }
@@ -34,7 +30,7 @@ function ScrollToTop(){
                 <button
                     onClick={scrollToTop}
                     aria-label="Scroll to top"
-                    className="animate-fade-in bg-gradient-to-r from-[#178582] to-[#043533] text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg shadow-black/40 transition-all duration-200 hover:brightness-110 hover:-translate-y-1 active:scale-95"
+                    className="animate-fade-in bg-brand-gold text-obsidian-950 rounded-full w-12 h-12 flex items-center justify-center shadow-lg shadow-black/40 transition-all duration-200 hover:bg-white hover:-translate-y-1 active:scale-95"
                 >
                     <FaArrowUp/>
                 </button>

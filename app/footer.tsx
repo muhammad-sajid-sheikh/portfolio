@@ -18,38 +18,32 @@ const socialLinks = [
 
 function Footers(){
     return(
-        <footer className="pt-8 pb-6" style={{backgroundImage:"url('/images/pagel.png')"}}>
+        <footer className="pt-12 pb-8 bg-obsidian-950 border-t border-white/10">
             <div>
-                <Image src="/images/logo3.png" alt="Muhammad Sajid logo" width={180} height={180} className="mx-auto"/>
+                <Image src="/images/logo3.png" alt="Muhammad Sajid logo" width={160} height={160} className="mx-auto opacity-90"/>
             </div>
 
-            <div className="flex space-x-9 justify-center mt-2">
+            <div className="flex space-x-8 justify-center mt-4">
                 {socialLinks.map((social) => (
-                    <a
-                        key={social.label}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={social.label}
-                    >
-                        <Image src={social.icon} alt={social.label} width={30} height={50} className="hover:scale-125 transition-transform duration-300"/>
+                    <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}>
+                        <Image src={social.icon} alt={social.label} width={26} height={44} className="opacity-70 hover:opacity-100 transition-opacity duration-300"/>
                     </a>
                 ))}
             </div>
 
-            <nav aria-label="Footer navigation" className="flex items-center flex-wrap justify-center gap-y-2 text-white font-bold mt-6">
+            <nav aria-label="Footer navigation" className="flex items-center flex-wrap justify-center gap-y-2 text-white/60 text-sm font-medium mt-8">
                 {footerLinks.map((link, i) => (
                     <a
                         key={link.href}
                         href={link.href}
-                        className={`px-5 hover:text-[#178582] transition-colors ${i !== footerLinks.length - 1 ? "border-r-2 border-white/20" : ""}`}
+                        className={`px-5 hover:text-brand-gold transition-colors ${i !== footerLinks.length - 1 ? "border-r border-white/10" : ""}`}
                     >
-                        {link.label}.
+                        {link.label}
                     </a>
                 ))}
             </nav>
 
-            <p className="text-center text-[#BFA181]/70 text-sm mt-6">
+            <p className="text-center text-white/30 text-xs mt-6">
                 © {new Date().getFullYear()} Muhammad Sajid. All rights reserved.
             </p>
         </footer>

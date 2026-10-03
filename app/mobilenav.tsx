@@ -9,10 +9,9 @@ import { GiSkills } from "react-icons/gi";
 import { MdOutlineReviews } from "react-icons/md";
 import { RiContactsBook3Fill } from "react-icons/ri";
 
-// Props type
-type Props = {
-    showNav: boolean;
-    closeNav: () => void
+type Props ={
+    showNav:boolean;
+    closeNav:()=>void
 };
 
 const navLinks = [
@@ -39,7 +38,7 @@ function MobileNav({ closeNav, showNav }: Props) {
             ></div>
 
             {/* nav links */}
-            <div className={`text-white ${navOpen} transform transition-all duration-500 delay-300 fixed justify-center p-20 flex-col h-full w-[80%] sm:w-[60%] bg-black space-y-6 z-[10000] flex`}>
+            <div className={`text-white ${navOpen} transform transition-all duration-500 delay-300 fixed justify-center p-20 flex-col h-full w-[80%] sm:w-[60%] bg-obsidian-950 border-l border-white/10 space-y-6 z-[10000] flex`}>
 
                 {navLinks.map((link) => {
                     const Icon = link.icon;
@@ -48,20 +47,19 @@ function MobileNav({ closeNav, showNav }: Props) {
                             key={link.href}
                             href={link.href}
                             onClick={closeNav}
-                            className="navlink flex items-center gap-3 text-[20px] ml-12 border-b-[1.5px] pb-2 border-white/40 sm:text-[26px] hover:pl-1 transition-all"
+                            className="navlink flex items-center gap-3 text-[20px] ml-12 border-b-[1.5px] pb-2 border-white/10 sm:text-[26px] hover:pl-1 transition-all"
                         >
-                            <Icon className="text-[#178582] flex-shrink-0" />
+                            <Icon className="text-brand-gold flex-shrink-0" />
                             <span>{link.label}</span>
                         </a>
                     );
                 })}
 
                 <button onClick={closeNav} aria-label="Close navigation menu" className="absolute top-[3rem] right-[1.4rem]">
-                    <CgClose className="sm:w-8 sm:h-8 w-6 h-6 text-white hover:text-[#178582] transition-colors" />
+                    <CgClose className="sm:w-8 sm:h-8 w-6 h-6 text-white hover:text-brand-gold transition-colors" />
                 </button>
             </div>
         </div>
     )
 }
-
 export default MobileNav

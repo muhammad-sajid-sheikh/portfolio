@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 
 type Props = {
@@ -7,7 +6,6 @@ type Props = {
         review: string;
         rating: number;
         profession: string;
-        image: string;
     }
 }
 
@@ -18,42 +16,49 @@ function renderStars(rating: number) {
 
     for (let i = 0; i < 5; i++) {
         if (i < fullStars) {
-            stars.push(<FaStar key={i} className="text-yellow-500"/>);
+            stars.push(<FaStar key={i} className="text-brand-gold" size={12}/>);
         } else if (i === fullStars && hasHalf) {
-            stars.push(<FaStarHalfAlt key={i} className="text-yellow-500"/>);
+            stars.push(<FaStarHalfAlt key={i} className="text-brand-gold" size={12}/>);
         } else {
-            stars.push(<FaRegStar key={i} className="text-yellow-500"/>);
+            stars.push(<FaRegStar key={i} className="text-brand-gold" size={12}/>);
         }
     }
     return stars;
 }
 
+// derive initials from a name, e.g. "Ayesha Khan" -> "AK"
+function getInitials(name: string) {
+    return name
+        .split(" ")
+        .filter(Boolean)
+        .slice(0, 2)
+        .map(part => part[0]?.toUpperCase())
+        .join("");
+}
+
 function Reviewcard({review}:Props){
-    const {image, name, profession, rating, review:reviewText} = review;
+    const {name, profession, rating, review:reviewText} = review;
+
     return(
-        <div className="h-full flex flex-col rounded-md overflow-hidden bg-[#02060B] m-4 shadow-lg">
-            <div className="p-6 flex-1">
-                <Image src="/images/qouteu.png" alt="opening quote" width={20} height={20}/>
-                <p className="text-[#BFA181] text-opacity-95 mt-2">{reviewText}</p>
-                <Image src="/images/qouteb.png" alt="closing quote" width={20} height={20} className="ml-auto mt-2"/>
-            </div>
-
-            <div className="px-5 py-2.5 mb-3 w-fit mx-auto rounded-full flex items-center gap-2 bg-gradient-to-r from-[#178582] to-[#043533] text-white font-bold text-sm">
-                <div className="flex items-center gap-0.5">
+        <div className="panel h-full flex flex-col m-4 p-6">
+            <div className="flex-1">
+                <div className="flex items-center gap-1 mb-4">
                     {renderStars(rating)}
+                    <span className="text-xs text-white/40 ml-2">{rating}/5</span>
                 </div>
-                <span>{rating}/5</span>
+                <p className="text-white/60 text-sm leading-relaxed">&ldquo;{reviewText}&rdquo;</p>
             </div>
 
-            <div className="bg-gradient-to-r from-[#b98694] to-[#a58d93]">
-                <div className="p-6 flex items-center space-x-6">
-                    <div>
-                        <Image src={image} alt={name} width={48} height={48} className="rounded-full border-2 border-white/40 object-cover"/>
-                    </div>
-                    <div>
-                        <h4 className="text-lg font-bold text-[#02060B]">{name}</h4>
-                        <p className="text-base text-[#02060B]">{profession}</p>
-                    </div>
+            <div className="flex items-center gap-4 mt-6 pt-5 border-t border-white/10">
+                <div
+                    aria-hidden="true"
+                    className="w-11 h-11 rounded-full border border-brand-gold/30 bg-obsidian-900 flex items-center justify-center text-brand-gold text-sm font-bold shrink-0"
+                >
+                    {getInitials(name)}
+                </div>
+                <div>
+                    <h4 className="text-sm font-bold text-white">{name}</h4>
+                    <p className="text-xs text-white/40">{profession}</p>
                 </div>
             </div>
         </div>

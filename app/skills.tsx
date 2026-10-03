@@ -6,7 +6,7 @@ const categoryOrder = ["Web Development", "Design & Creative Tools", "Certificat
 
 function Skills(){
     return(
-        <section id="skill" className="pt-16 pb-16" style={{backgroundImage:"url('/images/paged.png')"}}>
+        <section id="skill" className="pt-24 pb-24 bg-obsidian-950">
             <SectionHeadding>My Skills</SectionHeadding>
 
             <div className="w-[80%] mx-auto mt-20 space-y-16">
@@ -16,15 +16,16 @@ function Skills(){
 
                     return (
                         <div key={category}>
-                            <h3 className="text-xl md:text-2xl font-bold text-white mb-8 border-l-4 border-[#178582] pl-4">
+                            <h3 className="text-lg md:text-xl font-semibold text-white/70 mb-8 flex items-center gap-3">
+                                <span className="w-8 h-px bg-brand-gold/60"></span>
                                 {category}
                             </h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 items-stretch">
                                 {skillsInCategory.map((skill, i) => (
                                     <div
                                         key={skill.id}
-                                        data-aos="flip-left"
-                                        data-aos-delay={i * 100}
+                                        data-aos="fade-up"
+                                        data-aos-delay={i * 80}
                                     >
                                         <Skillcard skill={skill}/>
                                     </div>

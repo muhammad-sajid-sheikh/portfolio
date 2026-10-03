@@ -4,8 +4,6 @@ import logo2 from "../public/images/logo2.png"
 import { HiBars3BottomRight } from "react-icons/hi2"
 import { useEffect, useState } from "react";
 
-// define props type
-
 type Props = {
     openNav:()=>void
 }
@@ -32,11 +30,10 @@ function Nav({openNav}:Props){
         return ()=>{
             window.removeEventListener("scroll",handler);
         }
-
     },[])
 
     return(
-        <div className={`fixed top-0 left-0 h-[6vh] z-[10] w-full transition-all duration-300 ${ navBg ? "bg-[#030b14ad] backdrop-blur-md shadow-lg shadow-black/20": "bg-black"}`}>
+        <div className={`fixed top-0 left-0 h-[6vh] z-[10] w-full transition-all duration-300 ${ navBg ? "bg-obsidian-950/90 backdrop-blur-md border-b border-white/10": "bg-obsidian-950"}`}>
             <div className="flex items-center h-full justify-between w-[95%] sm:w-[90%] xl:w-[80%] mx-auto">
                 {/* logo */}
                <a href="#home" aria-label="Go to home">
@@ -53,8 +50,8 @@ function Nav({openNav}:Props){
                 </div>
                 {/* button */}
                 <div className="flex items-center space-x-4">
-                    <a href="#contact" className="md:px-5 md:py-1.5 px-3 py-1 text-white font-semibold sm:text-base text-sm bg-gradient-to-r from-[#178582] to-[#043533]
-                    hover:brightness-110 hover:scale-[1.03] active:scale-95 transition-all duration-200 rounded-lg shadow-md shadow-black/30">
+                    <a href="#contact" className="md:px-5 md:py-1.5 px-3 py-1 text-obsidian-950 font-semibold sm:text-base text-sm bg-brand-gold
+                    hover:bg-white transition-all duration-200 rounded-md">
                         Hire Me
                     </a>
                     {/* burger */}

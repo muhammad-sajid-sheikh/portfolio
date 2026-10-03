@@ -15,24 +15,24 @@ type Props = {
 
 function ProjectCard({ project }: Props) {
     return (
-        <div className="group h-full flex flex-col bg-gradient-to-r from-[#b98694] to-[#a58d93] rounded-lg overflow-hidden shadow-xl transition-transform duration-300 hover:-translate-y-2">
+        <div className="panel panel-hover group h-full flex flex-col overflow-hidden">
             {/* image with hover overlay */}
-            <div className="relative w-full h-[200px] overflow-hidden">
+            <div className="relative w-full h-[200px] overflow-hidden border-b border-white/10">
                 <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                <div className="absolute inset-0 bg-obsidian-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                     <Link
                         href={project.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`View live demo of ${project.title}`}
-                        className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#02060B] hover:scale-110 transition-transform"
+                        className="w-10 h-10 rounded-full bg-brand-gold flex items-center justify-center text-obsidian-950 hover:scale-110 transition-transform"
                     >
-                        <FaExternalLinkAlt size={16}/>
+                        <FaExternalLinkAlt size={15}/>
                     </Link>
                     {project.github && (
                         <Link
@@ -40,9 +40,9 @@ function ProjectCard({ project }: Props) {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label={`View GitHub repository for ${project.title}`}
-                            className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#02060B] hover:scale-110 transition-transform"
+                            className="w-10 h-10 rounded-full bg-brand-gold flex items-center justify-center text-obsidian-950 hover:scale-110 transition-transform"
                         >
-                            <FaGithub size={18}/>
+                            <FaGithub size={17}/>
                         </Link>
                     )}
                 </div>
@@ -50,15 +50,15 @@ function ProjectCard({ project }: Props) {
 
             {/* text content */}
             <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-lg font-bold text-[#02060B]">{project.title}</h3>
-                <p className="mt-3 text-sm text-[#030B14] text-opacity-80 flex-1">{project.description}</p>
+                <h3 className="text-lg font-bold text-white">{project.title}</h3>
+                <p className="mt-3 text-sm text-white/50 flex-1 leading-relaxed">{project.description}</p>
                 <Link
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#02060B] hover:gap-3 transition-all"
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-gold hover:gap-3 transition-all"
                 >
-                    View Project <FaExternalLinkAlt size={12}/>
+                    View Project <FaExternalLinkAlt size={11}/>
                 </Link>
             </div>
         </div>

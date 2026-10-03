@@ -1,14 +1,17 @@
 import { ReactNode } from "react"
 
-// define props type
 type Props = {
     children : ReactNode
 }
 
 function SectionHeadding({children}:Props){
     return(
-        <h2 className="bg-gradient-to-r from-[#178582] to-[#043533] w-fit text-center px-4 py-3 mx-auto text-white text-2xl sm:text-3xl md:text-4xl
-        uppercase tracking-wide -rotate-6 shadow-lg shadow-black/30">{children}</h2>
+        <div className="flex flex-col items-center text-center">
+            <span className="w-10 h-px bg-brand-gold/60 mb-4"></span>
+            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold tracking-tightish uppercase">
+                {children}
+            </h2>
+        </div>
     )
 }
 export default SectionHeadding

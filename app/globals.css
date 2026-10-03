@@ -6,43 +6,60 @@
     html {
         scroll-behavior: smooth;
     }
+    body {
+        background-color: #0A0A0C;
+    }
     ::selection {
-        background-color: #178582;
-        color: #ffffff;
+        background-color: #D4B483;
+        color: #0A0A0C;
     }
     :focus-visible {
-        outline: 2px solid #178582;
+        outline: 2px solid #D4B483;
         outline-offset: 2px;
     }
 }
 
 @layer components {
     .navlink {
-        @apply relative text-base font-medium w-fit block after:block after:content-[''] after:absolute after:h-[3px]
-        after:bg-[#178582] text-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition
+        @apply relative text-base font-medium w-fit block after:block after:content-[''] after:absolute after:h-[2px]
+        after:bg-[#D4B483] text-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition
         after:duration-300 after:origin-right
     }
     .text-bg {
-        background-image: linear-gradient(to right, #DA7B93 0%, #ffffff 100%);
+        background-image: linear-gradient(to right, #D4B483 0%, #ffffff 100%);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+
+    /* flat, crisp panel used for cards across the premium-minimal theme */
+    .panel {
+        @apply bg-obsidian-900 border border-white/10 rounded-xl shadow-[0_1px_0_0_rgba(255,255,255,0.04)_inset];
+    }
+    .panel-hover {
+        @apply transition-all duration-300 hover:border-brand-gold/40 hover:-translate-y-1;
+    }
+
     .custom-scrollbar::-webkit-scrollbar{
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
     }
     .custom-scrollbar::-webkit-scrollbar-track {
-        background: black
+        background: #0A0A0C;
     }
     .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: #b98694;
+        background: #D4B483;
         border-radius: 4px;
     }
 }
+
+/* react-multi-carousel arrow branding - kept outside @layer since it targets a third-party library's classes */
 .react-multi-carousel__arrow {
-    background: #178582 !important;
+    background: #D4B483 !important;
+}
+.react-multi-carousel__arrow::before {
+    color: #0A0A0C !important;
 }
 .react-multi-carousel__arrow:hover {
-    background: #043533 !important;
+    background: #ffffff !important;
 }
