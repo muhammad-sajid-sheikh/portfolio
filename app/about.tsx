@@ -22,8 +22,15 @@ const stats = [
 
 function About(){
     return(
-        <section id="about" className="pt-24 pb-24 bg-obsidian-950">
+        <section
+            id="about"
+            className="relative pt-24 pb-24 overflow-hidden"
+            style={{ backgroundImage: "url('/images/hero.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }}
+        >
+          {/* dark overlay so the shared fixed background stays consistent and text stays readable */}
+          <div className="absolute inset-0 bg-obsidian-950/85"></div>
 
+          <div className="relative">
           <SectionHeadding>About Me</SectionHeadding>
 
           <div className="w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center mt-20">
@@ -53,6 +60,7 @@ function About(){
                     </div>
                 ))}
             </div>
+          </div>
           </div>
         </section>
     )

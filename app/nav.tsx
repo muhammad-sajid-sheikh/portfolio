@@ -33,8 +33,13 @@ function Nav({openNav}:Props){
     },[])
 
     return(
-        <div className={`fixed top-0 left-0 h-[6vh] z-[10] w-full transition-all duration-300 ${ navBg ? "bg-obsidian-950/90 backdrop-blur-md border-b border-white/10": "bg-obsidian-950"}`}>
-            <div className="flex items-center h-full justify-between w-[95%] sm:w-[90%] xl:w-[80%] mx-auto">
+        <div
+            className={`fixed top-0 left-0 h-[6vh] z-[10] w-full transition-all duration-300 bg-obsidian-950 ${ navBg ? "backdrop-blur-md border-b border-white/10": ""}`}
+            style={{ backgroundImage: "url('/images/nav.jpg')", backgroundSize: "cover", backgroundPosition: "center bottom", backgroundAttachment: "fixed" }}
+        >
+            {/* dark overlay so logo/links stay readable over the generated background, and so scroll-state darkening still works */}
+            <div className={`absolute inset-0 transition-colors duration-300 ${navBg ? "bg-obsidian-950/30" : "bg-obsidian-950/10"}`}></div>
+            <div className="relative flex items-center h-full justify-between w-[95%] sm:w-[90%] xl:w-[80%] mx-auto">
                 {/* logo */}
                <a href="#home" aria-label="Go to home">
                  <Image src={logo2} alt="Sajid Sheikh logo" className="w-[180px] h-[140px] ml-[-1.5rem] sm:ml-0" priority/>

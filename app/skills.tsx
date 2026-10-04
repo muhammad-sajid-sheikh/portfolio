@@ -6,7 +6,13 @@ const categoryOrder = ["Web Development", "Design & Creative Tools", "Certificat
 
 function Skills(){
     return(
-        <section id="skill" className="pt-24 pb-24 bg-obsidian-950">
+        <section
+            id="skill"
+            className="relative pt-24 pb-24 overflow-hidden"
+            style={{ backgroundImage: "url('/images/hero.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }}
+        >
+            <div className="absolute inset-0 bg-obsidian-950/85"></div>
+            <div className="relative">
             <SectionHeadding>My Skills</SectionHeadding>
 
             <div className="w-[80%] mx-auto mt-20 space-y-16">
@@ -34,6 +40,7 @@ function Skills(){
                         </div>
                     );
                 })}
+            </div>
             </div>
         </section>
     )

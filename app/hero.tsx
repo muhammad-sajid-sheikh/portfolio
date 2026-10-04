@@ -5,7 +5,13 @@ import sajid3 from "../public/images/sajid3.png"
 
 function Hero(){
     return(
-        <section id="home" className="relative w-full h-screen overflow-hidden pt-[4vh] md:pt-[12vh] bg-obsidian-950">
+        <section
+            id="home"
+            className="relative w-full h-screen overflow-hidden pt-[4vh] md:pt-[12vh] bg-obsidian-950"
+            style={{ backgroundImage: "url('/images/hero.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }}
+        >
+            {/* dark overlay so text always stays readable over the generated background */}
+            <div className="absolute inset-0 bg-obsidian-950/80"></div>
 
             {/* a single, very faint glow - not a loud blob, just quiet depth */}
             <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[40rem] h-[40rem] rounded-full bg-brand-gold/[0.04] blur-[120px] pointer-events-none"></div>
@@ -13,8 +19,16 @@ function Hero(){
             <div className="relative flex justify-center flex-col w-4/5 h-full mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
 
-                    {/* text content */}
-                    <div>
+                    {/* image content - flat panel, thin border, no blur/glass - now on the left on desktop */}
+                    <div className="opacity-0 animate-fade-in [animation-delay:250ms] relative mx-auto w-fit order-1">
+                        <div className="absolute -inset-px rounded-2xl bg-gradient-to-b from-brand-gold/30 to-transparent -z-10 blur-sm"></div>
+                        <div className="panel overflow-hidden rounded-2xl w-[220px] sm:w-[260px] lg:w-[280px]">
+                            <Image src={sajid3} alt={BaseInfo.name} width={280} height={315} priority className="w-full h-auto"/>
+                        </div>
+                    </div>
+
+                    {/* text content - now on the right on desktop */}
+                    <div className="order-2">
                         {/* eyebrow line - quiet, no badge/pill, just a hairline rule */}
                         <p className="opacity-0 animate-fade-up flex items-center gap-3 text-sm md:text-base tracking-wide2 uppercase text-brand-gold font-medium mb-6">
                             <span className="w-8 h-px bg-brand-gold/60"></span>
@@ -41,14 +55,6 @@ function Hero(){
                             <span>Download CV</span>
                             <FaDownload className="transition-transform duration-300 group-hover:translate-y-0.5" size={14}/>
                         </button>
-                    </div>
-
-                    {/* image content - flat panel, thin border, no blur/glass */}
-                    <div className="opacity-0 animate-fade-in [animation-delay:250ms] relative mx-auto">
-                        <div className="absolute -inset-px rounded-2xl bg-gradient-to-b from-brand-gold/30 to-transparent -z-10 blur-sm"></div>
-                        <div className="panel overflow-hidden rounded-2xl">
-                            <Image src={sajid3} alt={BaseInfo.name} width={400} height={450} priority/>
-                        </div>
                     </div>
 
                 </div>

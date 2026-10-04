@@ -3,8 +3,13 @@ import ContactInfo from "./contactInfo"
 
 function Contact(){
     return(
-        <section id="contact" className="pt-24 pb-24 bg-obsidian-950">
-            <div className="grid grid-cols-1 lg:grid-cols-2 w-[90%] sm:w-[80%] mx-auto items-center gap-10">
+        <section
+            id="contact"
+            className="relative pt-24 pb-24 overflow-hidden"
+            style={{ backgroundImage: "url('/images/hero.jpg')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed" }}
+        >
+            <div className="absolute inset-0 bg-obsidian-950/85"></div>
+            <div className="relative grid grid-cols-1 lg:grid-cols-2 w-[90%] sm:w-[80%] mx-auto items-center gap-10">
                 {/* contact form */}
                 <div data-aos="fade-left">
                     <ContactForm/>
