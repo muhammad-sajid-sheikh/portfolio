@@ -74,7 +74,7 @@ export const ProjectData = [
         id: 6,
         title: "The Humanity Era — Donation Platform",
         description: "A donation website for a charity organization, enabling supporters to contribute food, shelter, and essential resources to underprivileged communities through a simple, guided donation flow.",
-        image: "/images/humanityera.png",
+        image: "/images/the.png",
         url: "https://thehumanityeracontribution.vercel.app/",
         github: ""
     },
@@ -82,7 +82,7 @@ export const ProjectData = [
         id: 7,
         title: "Ghar Ka Samaan — Grocery E-Commerce",
         description: "A full grocery e-commerce platform with category browsing, cart and checkout, a lucky-draw loyalty system on every order, and WhatsApp-based customer support.",
-        image: "/images/gharkasamaan.png",
+        image: "/images/grocery.png",
         url: "https://www.gharkasamaan.online/",
         github: ""
     }
