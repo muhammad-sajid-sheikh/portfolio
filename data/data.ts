@@ -32,6 +32,22 @@ export const servicesData = [
 export const ProjectData = [
     {
         id: 1,
+        title: "Aurelia Beauty Studio - Beauty & Salon Website",
+        description: "A modern, elegant, and fully responsive beauty studio website designed to showcase salon services, treatments, pricing, and brand identity. The website provides a smooth and user-friendly experience with a premium visual design tailored for a modern beauty studio.",
+        image: "/images/parlour.png",
+        url: "https://aureliabeautystudio.vercel.app/",
+        github: ""
+    },
+      {
+        id: 2,
+        title: "Watch - Ecommerce Website",
+        description: "A modern, responsive e-commerce website for showcasing and selling premium watches with a clean UI and seamless shopping experience.",
+        image: "/images/watch.png",
+        url: "https://watch-website-beryl.vercel.app/",
+        github: ""
+    },
+     {
+        id: 3,
         title: "V-Coders — Web Agency Platform",
         description: "A full business website for my tech team, V-Coders, showcasing web development, software, and design services with a projects showcase and team page.",
         image: "/images/vcoders.png",
@@ -39,7 +55,7 @@ export const ProjectData = [
         github: ""
     },
     {
-        id: 2,
+        id: 4,
         title: "Lucky Draw — Offline Raffle Tool",
         description: "A lightweight raffle tool that lets users upload an Excel participant list and run an offline lucky-draw directly in the browser.",
         image: "/images/lucky.png",
@@ -47,7 +63,7 @@ export const ProjectData = [
         github: ""
     },
     {
-        id: 3,
+        id: 5,
         title: "Political Leader Portfolio (Demo)",
         description: "A demo public-figure portfolio built to showcase a politician's profile, community initiatives, press coverage, and contact details.",
         image: "/images/ferozkhan.png",
@@ -55,7 +71,7 @@ export const ProjectData = [
         github: ""
     },
     {
-        id: 4,
+        id: 6,
         title: "Physical AI & Humanoid Robotics Textbook",
         description: "An AI-native technical textbook built with Docusaurus for a hackathon, covering ROS 2, digital twins, NVIDIA Isaac, and Vision-Language-Action models.",
         image: "/images/docu.png",
@@ -63,7 +79,7 @@ export const ProjectData = [
         github: ""
     },
     {
-        id: 5,
+        id: 7,
         title: "Ghandhara Tyre — Excel Data Extractor",
         description: "A business tool built for Ghandhara Tyre and Rubber Company that lets staff upload an Excel file and extract its data for further use.",
         image: "/images/ai.png",
@@ -71,7 +87,7 @@ export const ProjectData = [
         github: ""
     },
     {
-        id: 6,
+        id: 8,
         title: "The Humanity Era — Donation Platform",
         description: "A donation website for a charity organization, enabling supporters to contribute food, shelter, and essential resources to underprivileged communities through a simple, guided donation flow.",
         image: "/images/the.png",
@@ -79,7 +95,7 @@ export const ProjectData = [
         github: ""
     },
     {
-        id: 7,
+        id: 9,
         title: "Ghar Ka Samaan — Grocery E-Commerce",
         description: "A full grocery e-commerce platform with category browsing, cart and checkout, a lucky-draw loyalty system on every order, and WhatsApp-based customer support.",
         image: "/images/grocery.png",
